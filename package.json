@@ -1,39 +1,11 @@
 {
-  "name": "vochat",
+  "name": "vochat-server",
   "version": "1.0.0",
-  "description": "Chat vocal & texte avec tes amis",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder --win --x64",
-    "build-all": "electron-builder --win --mac --linux"
+    "start": "node server.js"
   },
-  "build": {
-    "appId": "com.vochat.app",
-    "productName": "VoChat",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "icon.png"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "icon.png",
-      "createDesktopShortcut": true,
-      "shortcutName": "VoChat"
-    },
-    "files": [
-      "main.js",
-      "preload.js",
-      "src/**",
-      "icon.png"
-    ]
-  },
-  "devDependencies": {
-    "electron": "^28.0.0",
-    "electron-builder": "^24.0.0"
+  "dependencies": {
+    "ws": "^8.16.0"
   }
 }
